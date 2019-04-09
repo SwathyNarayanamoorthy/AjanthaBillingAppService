@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.ajantha.billing</groupId>
+  <artifactId>billingWAR</artifactId>
+  <packaging>war</packaging>
+  <name>prr-web Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <parent>
+  	<groupId>com.ajantha.billing.parent</groupId>
+  	<artifactId>parent</artifactId>
+  	<version>1.0</version>
+  </parent>
+  <dependencies>
+    <dependency>
+    	<groupId>com.ajantha.billing</groupId>
+    	<artifactId>billingWeb</artifactId>
+    	<version>${billing.product.version}</version>
+    </dependency>
+  </dependencies>
+  <build>
+  <finalName>billingWAR</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<!-- <packagingExcludes>WEB-INF/lib/itextpdf-5.0.6.jar</packagingExcludes> -->
+					<!-- Comment the below line for development purpose. -->
+					<!-- <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes> -->
+					<warSourceDirectory>WebContent</warSourceDirectory>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

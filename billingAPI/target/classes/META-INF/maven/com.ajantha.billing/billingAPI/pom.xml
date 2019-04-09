@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.ajantha.billing</groupId>
+  <artifactId>billingAPI</artifactId>
+  <packaging>jar</packaging>
+
+  <name>billingAPI</name>
+  <url>http://maven.apache.org</url>
+	
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <parent>
+		<groupId>com.ajantha.billing.parent</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0</version>
+  </parent>
+  <dependencies>
+ 	<dependency>
+    	<groupId>org.glassfish.jersey.containers</groupId>
+    	<artifactId>jersey-container-servlet-core</artifactId>
+    	<version>${jersey.version}</version>
+	</dependency>
+	<dependency>
+    	<groupId>org.glassfish.jersey.inject</groupId>
+    	<artifactId>jersey-hk2</artifactId>
+    	<version>${jersey.version}</version>
+	</dependency>
+	<dependency>
+     	<groupId>org.glassfish.jersey.media</groupId>
+     	<artifactId>jersey-media-json-jettison</artifactId>
+     	<version>${jersey.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.codehaus.jettison</groupId>
+	    <artifactId>jettison</artifactId>
+	    <version>${jettison.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>${servlet.api.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	    <version>${commons.io.version}</version>
+	</dependency>
+  	<dependency>
+		<groupId>com.ajantha.billing</groupId>
+		<artifactId>billingCommon</artifactId>
+		<version>${billing.product.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>com.ajantha.billing</groupId>
+		<artifactId>billingTO</artifactId>
+		<version>${billing.product.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>com.ajantha.billing</groupId>
+		<artifactId>billingManager</artifactId>
+		<version>${billing.product.version}</version>
+	</dependency>
+  </dependencies>
+</project>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="billingWAR">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/" source-path="/WebContent"/>
+        <dependent-module archiveName="billingWeb-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/billingWeb/billingWeb">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="billingCommon-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/billingCommon/billingCommon">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="billingDAO-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/billingDAO/billingDAO">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="billingTO-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/billingTO/billingTO">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="billingManager-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/billingManager/billingManager">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="billingAPI-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/billingAPI/billingAPI">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/billingWAR/target/classes"/>
+        <property name="context-root" value="billingWAR"/>
+        <property name="component.exclusion.patterns"/>
+    </wb-module>
+</project-modules>

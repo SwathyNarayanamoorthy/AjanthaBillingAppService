@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		
+		<property name="hibernate.dialect">com.ajantha.billing.configuration.BillingCustomSQLServerDialect</property>
+		<property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		<property name="hibernate.connection.release_mode">after_transaction</property>
+		<property name="hibernate.connection.isolation">2</property>
+		<property name="show_sql">true</property>
+		
+		<property name="hibernate.connection.provider_class">com.ajantha.billing.configuration.BoneCPConnectionProvider</property>
+		<property name="bonecp.partitionCount">1</property>
+        <property name="bonecp.minConnectionsPerPartition">1</property>
+        <property name="bonecp.maxConnectionsPerPartition">3</property>
+		<property name="bonecp.acquireIncrement">1</property>
+		<!-- <property name="bonecp.idleMaxAgeInSeconds">1800</property> -->
+		<property name="bonecp.closeConnectionWatch">false</property>
+		<property name="bonecp.logStatementsEnabled">false</property>
+		<property name="bonecp.transactionRecoveryEnabled">false</property>
+		<property name="bonecp.disableConnectionTracking">false</property>
+		<property name="bonecp.disableJMX">true</property>
+		<property name="bonecp.lazyInit">false</property>
+					
+		<mapping class="com.ajantha.billing.user.info.to.UserInfoTO" />	
+		
+	</session-factory>
+</hibernate-configuration>
