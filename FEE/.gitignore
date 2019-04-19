@@ -1,0 +1,16 @@
+### Node ###
+# Dependency directory
+node_modules
+
+### Log generated directory ###
+tmp
+
+### Coverage ###
+/coverage/
+.nyc_output
+
+### Build Files ###
+/public/build/*
+!/public/build/img
+!/public/build/pdfs
+!/public/build/libs

@@ -1,0 +1,7 @@
+@import './fn/variables';
+@import './fn/mixins';
+@import './fn/media';
+
+.strike{
+    text-decoration: line-through;
+}
