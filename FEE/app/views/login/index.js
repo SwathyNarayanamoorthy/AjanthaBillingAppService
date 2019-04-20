@@ -6,6 +6,8 @@ import * as actions from '../../actions';
 import theme from '../../themes/theme';
 import { Paper,Typography, Checkbox,FormControlLabel,Input, InputLabel, FormControl, Button } from '@material-ui/core';
 import {MuiThemeProvider} from '@material-ui/core/styles';
+import {errorMessage} from '../../constants';
+import Notification from '../components/notification';
 class Login extends React.Component {
 /* istanbul ignore next */
   constructor (props) {
@@ -13,14 +15,21 @@ class Login extends React.Component {
     this.state = {
       showPassword: false,
       password: "",
-      username: ""
+      username: "",
+      errorMessage: ""
     }
     this.login = () => this._login();
     this.usernameHandler = (event) => this._usernameHandler(event);
     this.handleChangePassword = (event) => this._handleChangePassword(event);
     this.handleClickShowPassword = () => this._handleClickShowPassword();
   }
-  
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.notificationMessages.errorCode == "404") {
+      this.setState({
+        errorMessage: errorMessage.InvalidAuthenticationMessage
+      });
+    }
+  }
   _usernameHandler (event) {
     this.setState({
       username: event.target.value
@@ -32,6 +41,10 @@ class Login extends React.Component {
         password=this.state.password;
     if (username !== "" && password != "" ) {
       this.props.dispatch(actions.authenticateUser(username, password));
+    } else {
+      this.setState({
+        errorMessage: errorMessage.UsernamePasswordRequired
+      });
     }
   }
   
@@ -49,6 +62,7 @@ class Login extends React.Component {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
+        <Notification message = {this.state.errorMessage} type="error" />
           <FormControl margin="normal" required fullWidth>
             <InputLabel htmlFor="username">Username</InputLabel>
             <Input id="username" name="username" autoComplete="username"

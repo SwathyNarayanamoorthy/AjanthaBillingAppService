@@ -2,10 +2,21 @@
 @import './fn/mixins';
 @import './fn/media';
 @import './login';
-
+@import './header';
+@import './footer';
+@import './notifications';
 .content-container{
     background: #F3F3F3;
     border-radius: 8px;
     margin: 25px auto;
     max-width: 400px;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #333;
+    font-size: 1em;
+    line-height: 1.6;
+}
+.hide {
+    display: none;
 }

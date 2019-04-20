@@ -1,0 +1,24 @@
+footer {
+    padding-left: 65px;
+    padding-right: 65px;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    border-top: 1px solid #9da09d;
+    color: #9da09d;
+    display: flex;
+    font-size: 14px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-top: 30px;
+    padding-bottom: 12px;
+    padding-top: 11px; 
+}
+footer a {
+    color: #9da09d; 
+}
+footer a:hover {
+    color: #9da09d;
+    text-decoration: underline; 
+}

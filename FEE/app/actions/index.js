@@ -22,17 +22,11 @@ export function authenticateUser (username, password) {
   return function (dispatch) {
     return dataRequests.authenticateUser(username, password)
       .then(function (response) {
-        dispatch(history.push(`/users/${response.userId}`));
         dispatch(successLoginUser(response));
+        dispatch(history.push(`/dashboard`));
       })
       .catch(function (error) {
-        let response = {
-          userId: '1234',
-          username: 'Swat'
-        }
-        dispatch(history.push(`/users/123`));
-        dispatch(successLoginUser(response));
-        //dispatch(dispatchErrorHandler(actionEvents.FAILED_USER_AUTHENTICATION, error));
+        dispatch(dispatchErrorHandler(actionEvents.FAILED_USER_AUTHENTICATION, error));
       });
   };
 }

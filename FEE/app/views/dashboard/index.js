@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 import theme from '../../themes/theme';
 import { Link as RouterLink } from 'react-router-dom'
 import Link from '@material-ui/core/Link';
+import Header from '../components/header';
+import Footer from '../components/footer';
 class Dashboard extends React.Component {
   /* istanbul ignore next */
   constructor (props) {
@@ -16,20 +18,21 @@ class Dashboard extends React.Component {
   render () {
     return (
       <div>
-        Welcome Swathy
-       <ul className="navlinks-section">
-            <li>
-              <Link component={RouterLink} to="/billing/">
-                Billing
-              </Link>
+        <Header loggedInUser={this.props.loggedInUser} pageTitle="Dashboard" />
+        <ul className="navlinks-section">
+          <li>
+            <Link component={RouterLink} to="/billing/">
+              Billing
+            </Link>
+          </li>
+          <li>
+            <Link component={RouterLink} to={`/manage/bills/`}>
+              <i className="luna-icon-pos luna-icon-32 icon-user-gear"></i>
+              View Bill histrory
+            </Link>
             </li>
-            <li>
-              <Link component={RouterLink} to={`/manage/bills/`}>
-                <i className="luna-icon-pos luna-icon-32 icon-user-gear"></i>
-                View Bill histrory
-              </Link>
-              </li>
-          </ul>
+        </ul>
+        <Footer />
       </div>
     );
   }

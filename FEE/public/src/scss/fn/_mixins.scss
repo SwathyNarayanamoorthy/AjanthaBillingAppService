@@ -14,3 +14,8 @@
   -webkit-appearance: $property;
      -moz-appearance: $property;
 }
+
+@mixin site-margin {
+        padding-left: 65px;
+        padding-right: 65px;
+      }
