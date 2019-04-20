@@ -6,9 +6,8 @@ import { Route, Router } from 'react-router-dom'
 import Dashboard from './views/dashboard'
 import Login from './views/login'
 import { hashHistory  } from 'react-router';
-import { createBrowserHistory } from 'history';
+import  history from './history';
 
-const history = createBrowserHistory()
 const routing = (
   <Router history={history}>
     <div>
