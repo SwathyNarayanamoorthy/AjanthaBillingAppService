@@ -1,11 +1,11 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import thunk from 'redux-thunk';
-import { browserHistory } from 'react-router';
 import { routerMiddleware } from 'react-router-redux';
 import localreducers from '../reducers';
+import { browserHistory } from 'react-router';
 
 const reducer = combineReducers({
-  user: localreducers
+  billing: localreducers
 });
 
 const routingMiddleware = routerMiddleware(browserHistory);

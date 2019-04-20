@@ -1,12 +1,11 @@
 'use strict';
-
-
 import * as actionEvents from './events';
 import * as dataRequests from './dataRequests';
 
-export function setUsersData (data) {
+import {  push } from 'react-router-redux';
+export function successLoginUser (data) {
   return {
-    type: actionEvents.USER_AUTHENTICATED,
+    type: actionEvents.USER_AUTHENTICATED_SUCCESSFULY,
     payload: data
   };
 }
@@ -23,10 +22,17 @@ export function authenticateUser (username, password) {
   return function (dispatch) {
     return dataRequests.authenticateUser(username, password)
       .then(function (response) {
-        dispatch(setUsersData(response.data));
+        dispatch(push(`/users/${response.userId}`));
+        dispatch(successLoginUser(response));
       })
       .catch(function (error) {
-        dispatch(dispatchErrorHandler(actionEvents.FAILED_USER_AUTHENTICATION, error));
+        let response = {
+          userId: '1234',
+          username: 'Swat'
+        }
+        dispatch(push(`/users/123`));
+        dispatch(successLoginUser(response));
+        //dispatch(dispatchErrorHandler(actionEvents.FAILED_USER_AUTHENTICATION, error));
       });
   };
 }

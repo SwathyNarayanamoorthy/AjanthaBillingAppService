@@ -1,13 +1,19 @@
 import React from 'react'
-import { render } from 'react-dom'
-import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import App from './views/App'
-import rootReducer from './reducers'
 import store from './store'
-
-render(
-  <Provider store={store}>
-    <App />
-  </Provider>,document.getElementById('root')
+import ReactDOM from 'react-dom'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
+import Dashboard from './views/dashboard'
+import Login from './views/login'
+const routing = (
+  <Router>
+    <div>
+      <Route path="/" component={Login} />
+      <Route path="/login" component={Login} />
+      <Route path="/users/123/" component={Dashboard} />
+    </div>
+  </Router>
 )
+ReactDOM.render(<Provider store={store}>
+       {routing}
+     </Provider>, document.getElementById('root'))
