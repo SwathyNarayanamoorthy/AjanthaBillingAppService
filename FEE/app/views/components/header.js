@@ -2,7 +2,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import {AccountCircle} from '@material-ui/icons';
 const Header = (props) =>  {
     return(
       <header>
@@ -12,7 +11,7 @@ const Header = (props) =>  {
           </i>
           <div className="user-utilities">
             <span className="member-user-name">{props.loggedInUser.fullName}</span>
-            <AccountCircle />
+            <i className="fa fa-user" aria-hidden="true"></i>
             <ul className="user-utilities-list">
               <li>
                   <a href={`/dashboard`}>Dashboard</a>
